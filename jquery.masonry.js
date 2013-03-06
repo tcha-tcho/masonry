@@ -5,7 +5,7 @@
  * http://masonry.desandro.com
  *
  * Licensed under the MIT license.
- * Copyright 2012 David DeSandro
+ * Copyright 2012 David DeSandro and Tcha-Tcho
  */
 
 /*jshint browser: true, curly: true, eqeqeq: true, forin: false, immed: false, newcap: true, noempty: true, strict: true, undef: true */
@@ -78,6 +78,7 @@
     gutterWidth: 0,
     isRTL: false,
     isFitWidth: false,
+    isReady: function(bricks){},
     containerStyle: {
       position: 'relative'
     }
@@ -211,6 +212,7 @@
       this.styleQueue = [];
 
       // provide $elems as context for the callback
+      this.options.isReady.call( $bricks ) 
       if ( callback ) {
         callback.call( $bricks );
       }
