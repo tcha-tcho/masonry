@@ -78,7 +78,7 @@
     gutterWidth: 0,
     isRTL: false,
     isFitWidth: false,
-    isReady: function(bricks){},
+    isReady: function(container_size){},
     containerStyle: {
       position: 'relative'
     }
@@ -212,7 +212,7 @@
       this.styleQueue = [];
 
       // provide $elems as context for the callback
-      this.options.isReady.call( $bricks ) 
+      this.options.isReady( containerSize ) 
       if ( callback ) {
         callback.call( $bricks );
       }
